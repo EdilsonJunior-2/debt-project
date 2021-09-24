@@ -1,0 +1,32 @@
+{
+    "dividas": [
+        {
+            "id": 0,
+            "idUsuario": 2,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-10 10:15:03"
+        },
+        {
+            "id": 1,
+            "idUsuario": 1,
+            "motivo": "Pediu emprestado do agiota e não pagou",
+            "valor": 7000.00,
+            "created_at": "2021-09-20 14:14:48"
+        },
+        {
+            "id": 2,
+            "idUsuario": 2,
+            "motivo": "Atrasou o BaneseCard",
+            "valor": 362.47,
+            "created_at": "2021-09-22 15:15:48"
+        },
+        {
+            "id": 3,            
+            "idUsuario": 5,
+            "motivo": "comprou 10k de cash no Free Fire acidentalmente",
+            "valor": 339.11,
+            "created_at": "2021-09-22 18:15:56"
+        }
+    ]
+}
