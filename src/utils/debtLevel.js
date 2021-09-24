@@ -1,7 +1,7 @@
 import { timeVariation } from "./returnDate";
 
 export default function debtLevel(created_at) {
-  const variation = timeVariation(created_at);
+  const variation = Math.trunc(timeVariation(created_at));
 
   if (0 <= variation && variation < 3)
     return { level: `${variation} dias de atraso`, color: "#00C781" };
