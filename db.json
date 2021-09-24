@@ -1,5 +1,6 @@
+
 {
-    "dividas": [
+    "divida": [
         {
             "id": 0,
             "idUsuario": 2,
@@ -27,6 +28,55 @@
             "motivo": "comprou 10k de cash no Free Fire acidentalmente",
             "valor": 339.11,
             "created_at": "2021-09-22 18:15:56"
+        },
+        {
+            "id": 4,
+            "idUsuario": 3,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-09 10:15:03"
+        },
+        {
+            "id": 5,
+            "idUsuario": 6,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-08 10:15:03"
+        },
+        {
+            "id": 6,
+            "idUsuario": 9,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-07 10:15:03"
+        },
+        {
+            "id": 7,
+            "idUsuario": 7,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-06 10:15:03"
+        },
+        {
+            "id": 8,
+            "idUsuario": 10,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-05 10:15:03"
+        },
+        {
+            "id": 9,
+            "idUsuario": 7,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-08-10 10:15:03"
+        },
+        {
+            "id": 10,
+            "idUsuario": 9,
+            "motivo": "Não pagou a conta da Oi",
+            "valor": 37.00,
+            "created_at": "2021-09-01 10:15:03"
         }
     ]
 }
