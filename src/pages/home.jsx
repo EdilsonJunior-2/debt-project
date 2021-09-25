@@ -95,9 +95,7 @@ function Home() {
   return (
     <div className={`home-container home-container-${mode}`}>
       <div id="header">
-        <a href="https://www.connvert.com.br" target="blank">
-          <img src={mode === "light" ? logoDark : logoWhite} alt="logo" />
-        </a>
+        <img src={mode === "light" ? logoDark : logoWhite} alt="logo" />
         <ToggleButtonGroup
           value={mode}
           exclusive
