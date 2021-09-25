@@ -6,6 +6,8 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
+  ToggleButton,
+  ToggleButtonGroup,
 } from "@mui/material";
 
 //pages
@@ -16,11 +18,15 @@ import DeleteDebt from "./deleteDebt";
 //components
 import ToastAnimated from "../components/toast";
 
-//icons
+//icons and assets
+import logoWhite from "../assets/logo-white.png";
+import logoDark from "../assets/logo-dark.png";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 //utils and reqs
 import { getDebts, getUsers } from "../services/debts";
@@ -41,6 +47,11 @@ function Home() {
   const [item4, setItem4] = useState();
   const [item5, setItem5] = useState();
   const [recall, setRecall] = useState(false);
+  const [mode, setMode] = useState(
+    window.sessionStorage.getItem("mode")
+      ? window.sessionStorage.getItem("mode")
+      : "light"
+  );
 
   useEffect(() => {
     const promise = [];
@@ -49,6 +60,10 @@ function Home() {
     Promise.all(promise)
       .then((res) => organizeUsersDebts(res))
       .then((res) => setArray(res));
+
+    if (!window.sessionStorage.getItem("mode")) {
+      window.sessionStorage.setItem("mode", mode);
+    }
   }, [recall]);
 
   const openModalAdd = () => {
@@ -71,8 +86,35 @@ function Home() {
     setEditItem(!editItem);
   };
 
+  function handleMode(event, newMode) {
+    console.log(newMode);
+    newMode && setMode(newMode);
+    window.sessionStorage.setItem("mode", newMode);
+  }
+
   return (
-    <div id="home-container">
+    <div className={`home-container home-container-${mode}`}>
+      <div id="header">
+        <a href="https://www.connvert.com.br" target="blank">
+          <img src={mode === "light" ? logoDark : logoWhite} alt="logo" />
+        </a>
+        <ToggleButtonGroup
+          value={mode}
+          exclusive
+          onChange={handleMode}
+          aria-label="background mode"
+          style={{
+            background: mode === "light" ? "#F3F3F3" : "#34526d",
+          }}
+        >
+          <ToggleButton value="light" aria-label="light">
+            <LightModeIcon />
+          </ToggleButton>
+          <ToggleButton value="dark" aria-label="dark">
+            <DarkModeIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </div>
       <div id="debts">
         {array.map((user) => {
           return (
@@ -151,8 +193,6 @@ function Home() {
           setArray={setArray}
           users={array}
         />
-        {/*
-         */}
         <EditDebt
           open={editItem}
           recall={() => setRecall(!recall)}

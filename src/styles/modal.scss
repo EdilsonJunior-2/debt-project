@@ -106,6 +106,31 @@
         }
       }
     }
+
+    &.container-dark {
+      background-color: #27262d;
+      color: white;
+
+      .form {
+        input {
+          background-color: #12304b;
+          color: white;
+          font-weight: bold;
+        }
+
+        select {
+          background-color: #12304b;
+          color: white;
+          font-weight: bold;
+        }
+      }
+
+      .option-buttons {
+        button {
+          font-weight: bold;
+        }
+      }
+    }
   }
 
   @media (max-width: 767.9px) {

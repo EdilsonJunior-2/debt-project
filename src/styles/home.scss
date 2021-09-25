@@ -1,5 +1,32 @@
-#home-container {
-  margin-top: 40px;
+.home-container {
+  padding-top: 40px;
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  background-color: #f3f3f3;
+
+  #header {
+    width: 80%;
+    padding: 0 10% 30px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      img {
+        height: 60px;
+      }
+    }
+
+    button {
+      max-height: 48px;
+    }
+
+    @media (max-width: 767.9px) {
+      width: 90%;
+      padding: 0 5% 30px 5%;
+    }
+  }
 
   #debts {
     display: flex;
@@ -28,6 +55,9 @@
           .debt-options {
             display: flex;
             justify-content: flex-end;
+            svg {
+              cursor: pointer;
+            }
           }
         }
       }
@@ -71,6 +101,23 @@
 
     @media (max-width: 767.9px) {
       left: 80vw;
+    }
+  }
+
+  &.home-container-dark {
+    background-color: #16151c;
+
+    #debts {
+      .debt {
+        background-color: #12304b;
+        color: #f3f3f3;
+
+        .debt-title {
+          svg {
+            color: #f3f3f3;
+          }
+        }
+      }
     }
   }
 }

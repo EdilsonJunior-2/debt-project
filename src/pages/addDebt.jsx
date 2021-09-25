@@ -39,7 +39,11 @@ const AddDebt = (props) => {
   return (
     <>
       <Modal open={props.open} className="modal">
-        <div className="container">
+        <div
+          className={`container container-${window.sessionStorage.getItem(
+            "mode"
+          )}`}
+        >
           <h2 className="title">Cadastrar dívida</h2>
           <div className="form">
             <div>Cliente</div>

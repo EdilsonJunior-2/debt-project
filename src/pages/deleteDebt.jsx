@@ -20,7 +20,11 @@ const DeleteDebt = (props) => {
 
   return (
     <Modal open={props.open} className="modal">
-      <div className="container">
+      <div
+        className={`container container-${window.sessionStorage.getItem(
+          "mode"
+        )}`}
+      >
         <h1>Deletar dívida</h1>
         <div className="info">
           Cliente: <span>{props.debt.userName}</span>

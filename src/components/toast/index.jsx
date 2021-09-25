@@ -22,5 +22,5 @@ export const showToast = ({ type, message }) => {
 };
 
 export default function ToastAnimated() {
-  return <Toast />;
+  return <Toast style={{ color: "yellow" }} />;
 }
