@@ -71,7 +71,6 @@ function Home() {
   };
 
   const openModalDelete = (props) => {
-    console.log(props);
     setItem1(props?.debtUser);
     setItem2(props?.justify);
     setItem3(props?.date);
@@ -88,7 +87,6 @@ function Home() {
   };
 
   function handleMode(event, newMode) {
-    console.log(newMode);
     newMode && setMode(newMode);
     window.sessionStorage.setItem("mode", newMode);
   }
@@ -127,7 +125,6 @@ function Home() {
               <AccordionDetails className="debt-details">
                 {user.debts.length !== 0 ? (
                   user.debts.map((debt) => {
-                    console.log(user);
                     const debt_level = debtLevel(debt.criado);
                     const date = returnDate(debt.criado);
                     return (

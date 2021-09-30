@@ -76,7 +76,6 @@ export async function deleteDebt(props) {
       props.onClose();
     })
     .catch((err) => {
-      console.log(err);
       showToast({
         type: "error",
         message: "Ops, houve algum erro inesperado!",

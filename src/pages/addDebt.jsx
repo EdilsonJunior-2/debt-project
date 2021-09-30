@@ -33,7 +33,7 @@ const AddDebt = (props) => {
         recall: () => props.recall(),
         loading: () => setLoadingAdd(false),
       });
-    } else console.log("erro");
+    }
   }
 
   return (
