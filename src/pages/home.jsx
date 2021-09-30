@@ -71,6 +71,7 @@ function Home() {
   };
 
   const openModalDelete = (props) => {
+    console.log(props);
     setItem1(props?.debtUser);
     setItem2(props?.justify);
     setItem3(props?.date);
@@ -126,13 +127,11 @@ function Home() {
               <AccordionDetails className="debt-details">
                 {user.debts.length !== 0 ? (
                   user.debts.map((debt) => {
-                    const debt_level = debtLevel(debt.created_at);
-                    const date = returnDate(debt.created_at);
+                    console.log(user);
+                    const debt_level = debtLevel(debt.criado);
+                    const date = returnDate(debt.criado);
                     return (
-                      <div
-                        className="debt-text-container"
-                        key={debt.created_at}
-                      >
+                      <div className="debt-text-container" key={debt.criado}>
                         <div className="debt-text debt-reason">
                           Justificativa: <span>{debt.motivo}</span>
                         </div>
@@ -163,7 +162,7 @@ function Home() {
                                 debtUser: user.user.name,
                                 justify: debt.motivo,
                                 date: date,
-                                id: debt.id,
+                                id: debt._id,
                                 value: debt.valor,
                               })
                             }

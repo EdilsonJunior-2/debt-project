@@ -28,9 +28,10 @@ const EditDebt = (props) => {
 
     if (err[0] === null && err[1] === null) {
       setLoadingEdit(true);
+      console.log(props);
       editDebt({
-        id: props.debt.id,
-        client: props.userId,
+        id: props.debt._id,
+        client: props.user.id,
         justify,
         value,
         onClose: () => props.onClose(),

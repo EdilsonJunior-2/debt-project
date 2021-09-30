@@ -1,5 +1,5 @@
-export const timeVariation = (created_at) => {
-  const date = new Date(created_at);
+export const timeVariation = (criado) => {
+  const date = new Date(criado);
   const now = new Date();
 
   const difference_in_time = now.getTime() - date.getTime();
@@ -8,8 +8,8 @@ export const timeVariation = (created_at) => {
   return difference_in_days;
 };
 
-export const returnDate = (created_at) => {
-  const date = new Date(created_at);
+export const returnDate = (criado) => {
+  const date = new Date(criado);
 
   return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 };

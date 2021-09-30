@@ -1,9 +1,9 @@
-import { api, usersApi } from "./api";
+import { api, usersApi, uuid } from "./api";
 import { showToast } from "../components/toast";
 
 export async function getDebts() {
-  const debts = await api.get("/divida");
-  return debts.data;
+  const debts = await api.get(`/divida?uuid=${uuid}`);
+  return debts.data.result;
 }
 
 export async function getUsers() {
@@ -13,7 +13,7 @@ export async function getUsers() {
 
 export async function postDebt(props) {
   await api
-    .post("/divida", {
+    .post(`/divida?uuid=${uuid}`, {
       idUsuario: props.client,
       motivo: props.justify,
       valor: props.value,
@@ -39,7 +39,7 @@ export async function postDebt(props) {
 
 export async function editDebt(props) {
   await api
-    .put(`/divida/${props.id}`, {
+    .put(`/divida/${props.id}?uuid=${uuid}`, {
       idUsuario: props.client,
       motivo: props.justify,
       valor: props.value,
@@ -65,7 +65,7 @@ export async function editDebt(props) {
 
 export async function deleteDebt(props) {
   await api
-    .delete(`/divida/${props.id}`)
+    .delete(`divida/${props.id}?uuid=${uuid}`)
     .then(() => {
       props.recall();
       showToast({
